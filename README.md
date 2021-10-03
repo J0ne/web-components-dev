@@ -1,4 +1,7 @@
-# \<awe-some>
+# \<awe-some> 
+## Development environment for creating awesome web components.
+
+* Devops with Docker*
 
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
