@@ -1,9 +1,23 @@
 # \<awe-some> 
 ## Development environment for creating awesome web components.
+* Uses storybook
+* Devops with Docker 2021
 
-* Devops with Docker*
+## Dev environment with Storybook
 
-This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
+To run a local instance of Storybook for your component, run
+
+```bash
+npm run storybook
+```
+
+To build a production version of Storybook, run
+
+```bash
+npm run storybook:build
+```
+
+This webcomponent  follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
 ## Installation
 
@@ -48,21 +62,6 @@ To run the tests in interactive watch mode run:
 ```bash
 npm run test:watch
 ```
-
-## Demoing with Storybook
-
-To run a local instance of Storybook for your component, run
-
-```bash
-npm run storybook
-```
-
-To build a production version of Storybook, run
-
-```bash
-npm run storybook:build
-```
-
 
 ## Tooling configs
 
