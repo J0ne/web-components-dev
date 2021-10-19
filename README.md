@@ -1,7 +1,7 @@
 # \<awe-some> 
 ## Development environment for creating awesome web components.
 * Uses storybook
-* Devops with Docker 2021
+* Devops with Docker 2021 (part 3)
 
 ## Dev environment with Storybook
 
