@@ -1,10 +1,9 @@
 FROM node:14
 WORKDIR /usr/src/app
 COPY package* ./
-COPY . .
 RUN npm install
-EXPOSE 8000
 RUN npm run storybook:build
-COPY ./storybook-static .
 
-
+FROM nginx
+WORKDIR /usr/src/app
+COPY ./storybook-static /usr/share/nginx/html
