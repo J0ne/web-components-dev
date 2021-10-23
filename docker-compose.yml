@@ -1,10 +1,17 @@
-version: "3"
+version: '3.7'
+
 services:
-  coursematerial:
+  awesome-dev:
     image: j0ne/awesome
-    ports:
-      - 4000:80
-    container_name: coursematerial
+    # build: . # Build with the Dockerfile here
+    command: npm run storybook # Run npm storybook as the command
+    ports: 
+      - 8001:8000 # storybook runs at 8000, publish that one
+    volumes:
+      - ./:/usr/src/app # Let us modify the contents of the container locally
+      - node_modules:/usr/src/app/node_modules # A bit of node magic, this ensures the dependencies built for the image are not available locally.
+    container_name: awesome-dev # Container name for convenience
+
   watchtower:
     image: containrrr/watchtower
     environment:
@@ -12,3 +19,6 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     container_name: watchtower
+
+volumes: # This is required for the node_modules named volume
+  node_modules:

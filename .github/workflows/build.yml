@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Heroku deployment
 
 # Controls when the workflow will run
 on:
@@ -37,3 +37,11 @@ jobs:
       with:
         push: true
         tags: j0ne/awesome:latest
+
+    - name: Deploy
+      uses: heroku container:login
+      uses: docker push registry.heroku.com/jonedev/web
+      with:
+        push: true
+        tags: j0ne/awesome:latest
+
