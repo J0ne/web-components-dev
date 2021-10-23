@@ -37,3 +37,11 @@ jobs:
       with:
         push: true
         tags: j0ne/awesome:latest
+
+    - name: Deploy to Heroku
+      uses: AkhileshNS/heroku-deploy@v3.12.12
+      with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "jonedev" #Must be unique in Heroku
+          heroku_email: "jouni.mannisto.cs@gmail.com"
+
