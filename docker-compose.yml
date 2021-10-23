@@ -2,9 +2,8 @@ version: '3.7'
 
 services:
   awesome-dev:
-    image: j0ne/awesome
+    # image: j0ne/awesome
     build: . # Build with the Dockerfile here
-    command: npm run storybook # Run npm storybook as the command
     ports: 
       - 8001:8000 # storybook runs at 8000, publish that one
     volumes:
