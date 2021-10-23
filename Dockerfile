@@ -3,5 +3,8 @@ WORKDIR /usr/src/app
 COPY package* ./
 COPY . .
 RUN npm install
-ENTRYPOINT [ "npm", "run", "storybook" ]
+EXPOSE 8000
+RUN npm run storybook:build
+COPY ./storybook-static/ .
+
 
