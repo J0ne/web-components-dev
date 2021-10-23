@@ -37,10 +37,3 @@ jobs:
       with:
         push: true
         tags: j0ne/awesome:latest
-
-    - name: Deploy
-      uses: registry.heroku.com/jonedev/web
-      with:
-        push: true
-        tags: j0ne/awesome:latest
-
