@@ -43,9 +43,9 @@ jobs:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: heroku container:login
     -name: Push to heroku
-      run: heroku container:push -a jonedev web
+      run: heroku container:push -a "jonedev" web
     - name: Release
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:release -a jonedev web
+      run: heroku container:release -a "jonedev" web
 
