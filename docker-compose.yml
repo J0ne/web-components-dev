@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-   awesome-dev:
+  awesome-dev:
     build: . # Build with the Dockerfile here
     # command: npm run storybook # Run npm storybook as the command
     ports: 
@@ -9,15 +9,15 @@ services:
     volumes:
       - ./:/usr/src/app # Let us modify the contents of the container locally
       - node_modules:/usr/src/app/node_modules # A bit of node magic, this ensures the dependencies built for the image are not available locally.
-    container_name: awesome-dev # Container name for convenience
-
-  watchtower:
-    image: containrrr/watchtower
-    environment:
-      -  WATCHTOWER_POLL_INTERVAL=60 # Poll every 60 seconds
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    container_name: watchtower
+    container_name: awesome-dev
+  
+  # watchtower:
+  #   image: containrrr/watchtower
+  #   environment:
+  #     -  WATCHTOWER_POLL_INTERVAL=60 # Poll every 60 seconds
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   container_name: watchtower
 
 volumes: # This is required for the node_modules named volume
   node_modules:
