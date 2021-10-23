@@ -39,11 +39,12 @@ jobs:
         tags: j0ne/awesome:latest
 
     - name: Deploy to Heroku
-      run: heroku container:login 
-    - name: Build and push
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:push -a jonedev web 
+      run: heroku container:login
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: heroku container:push -a jonedev web
     - name: Release
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
