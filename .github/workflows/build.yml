@@ -39,8 +39,7 @@ jobs:
         tags: j0ne/awesome:latest
 
     - name: Deploy
-      uses: heroku container:login
-      uses: docker push registry.heroku.com/jonedev/web
+      uses: registry.heroku.com/jonedev/web
       with:
         push: true
         tags: j0ne/awesome:latest
