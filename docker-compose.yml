@@ -4,8 +4,8 @@ services:
   awesome-dev:
     build: . # Build with the Dockerfile here
     # command: npm run start # Run npm storybook as the command
-    # ports: 
-    #   - 80:8080 # storybook runs at 8000, publish that one
+    ports: 
+      - 80:8080 # storybook runs at 8000, publish that one
     # volumes:
     #   - ./:/usr/src/app # Let us modify the contents of the container locally
       # - node_modules:/usr/src/app/node_modules # A bit of node magic, this ensures the dependencies built for the image are not available locally.
