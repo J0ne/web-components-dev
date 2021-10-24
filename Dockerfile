@@ -7,19 +7,10 @@ RUN npm install
 RUN npm run storybook:build
 COPY /storybook-static ./storybook-static
 
-FROM ubuntu:latest
-WORKDIR /usr/src/app
-RUN apt-get update
-RUN apt-get install nginx -y
-COPY nginx.conf /etc/nginx/nginx.conf
-# COPY ./site.conf /etc/nginx/conf.d/default.conf
-RUN touch /var/run/nginx.pid && \
-    chown -R www-data:www-data /var/run/nginx.pid && \
-    chown -R www-data:www-data /var/cache/nginx
+FROM nginxinc/nginx-unprivileged
+# COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=builder /usr/src/app/storybook-static /usr/share/nginx/html
 
-USER www-data
-COPY --from=builder /usr/src/app/storybook-static /var/www/html/
-EXPOSE 80
 CMD ["nginx", "-g daemon off;"]
 
 # FROM nginx
