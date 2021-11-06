@@ -1,8 +1,6 @@
 FROM node:14 as builder
 WORKDIR /usr/src/app
 COPY package* ./
-# COPY /storybook-static ./storybook-static
-# RUN mkdir /storybook-static
 RUN npm install
 RUN npm run storybook:build
 COPY /storybook-static ./storybook-static
