@@ -8,4 +8,4 @@ COPY /storybook-static ./storybook-static
 FROM node:slim
 COPY --from=builder /usr/src/app/storybook-static /usr/src/app
 RUN npm i -g serve
-CMD ["serve","-l", "8080", "/usr/src/app"]
+CMD ["serve","-l", "$PORT", "/usr/src/app"]
