@@ -20,7 +20,7 @@ export class AweSome extends LitElement {
 
   constructor() {
     super();
-    this.title = 'Hey there';
+    this.title = 'Counter';
     this.counter = 5;
   }
 
@@ -30,7 +30,7 @@ export class AweSome extends LitElement {
 
   render() {
     return html`
-      <h2>${this.title} Nr. ${this.counter}!</h2>
+      <h2>${this.title} value: ${this.counter}!</h2>
       <button @click=${this.__increment}>increment</button>
     `;
   }
